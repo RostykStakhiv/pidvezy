@@ -96,6 +96,8 @@
 		843EBF7D1E6AE89200B0F6E2 /* AddressInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EBF7C1E6AE89200B0F6E2 /* AddressInputView.swift */; };
 		843EBF7F1E6AE89F00B0F6E2 /* AddressInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843EBF7E1E6AE89F00B0F6E2 /* AddressInputView.xib */; };
 		84506F9121AB2A5B006F0EDC /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84506F9021AB2A5B006F0EDC /* URLEncoder.swift */; };
+		84506F9421AB4DBE006F0EDC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84506F9221AB4DBC006F0EDC /* Fabric.framework */; };
+		84506F9521AB4DBE006F0EDC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84506F9321AB4DBE006F0EDC /* Crashlytics.framework */; };
 		8452F2971E6C04E200520275 /* GoogleAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452F2961E6C04E200520275 /* GoogleAddressModel.swift */; };
 		845DA44B1E758DD8006ECE9A /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845DA44A1E758DD8006ECE9A /* TextFieldWithIcon.swift */; };
 		845DA44E1E758DEB006ECE9A /* TextFieldWithIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845DA44D1E758DEB006ECE9A /* TextFieldWithIcon.xib */; };
@@ -243,6 +245,8 @@
 		843EBF7C1E6AE89200B0F6E2 /* AddressInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressInputView.swift; sourceTree = "<group>"; };
 		843EBF7E1E6AE89F00B0F6E2 /* AddressInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressInputView.xib; sourceTree = "<group>"; };
 		84506F9021AB2A5B006F0EDC /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
+		84506F9221AB4DBC006F0EDC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		84506F9321AB4DBE006F0EDC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		8452F2961E6C04E200520275 /* GoogleAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAddressModel.swift; sourceTree = "<group>"; };
 		845DA44A1E758DD8006ECE9A /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldWithIcon.swift; path = TextFieldView/TextFieldWithIcon/TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		845DA44D1E758DEB006ECE9A /* TextFieldWithIcon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFieldWithIcon.xib; path = TextFieldView/TextFieldWithIcon/TextFieldWithIcon.xib; sourceTree = "<group>"; };
@@ -325,8 +329,10 @@
 				842321902156D0BC00E346B6 /* CoreData.framework in Frameworks */,
 				8423218E2156D0B300E346B6 /* Accelerate.framework in Frameworks */,
 				8423217D2156CCF900E346B6 /* SwiftSpinner.framework in Frameworks */,
+				84506F9521AB4DBE006F0EDC /* Crashlytics.framework in Frameworks */,
 				842321882156CFCB00E346B6 /* GoogleMaps.framework in Frameworks */,
 				8423217E2156CCF900E346B6 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				84506F9421AB4DBE006F0EDC /* Fabric.framework in Frameworks */,
 				842321862156CFCB00E346B6 /* GoogleMapsCore.framework in Frameworks */,
 				842321872156CFCB00E346B6 /* GoogleMapsBase.framework in Frameworks */,
 				8423217F2156CCF900E346B6 /* SCLAlertView.framework in Frameworks */,
@@ -375,6 +381,8 @@
 		841B59E01DFCBC8200C1E696 = {
 			isa = PBXGroup;
 			children = (
+				84506F9321AB4DBE006F0EDC /* Crashlytics.framework */,
+				84506F9221AB4DBC006F0EDC /* Fabric.framework */,
 				C1F128A61E51A3EE007AB3DD /* Config */,
 				841B59EB1DFCBC8200C1E696 /* Pidvezy */,
 				841B59EA1DFCBC8200C1E696 /* Products */,
@@ -952,6 +960,7 @@
 				841B59E61DFCBC8200C1E696 /* Frameworks */,
 				841B59E71DFCBC8200C1E696 /* Resources */,
 				842321812156CD0600E346B6 /* Copy Frameworks */,
+				84506F9621AB4DE1006F0EDC /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1060,6 +1069,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		84506F9621AB4DE1006F0EDC /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PROJECT_DIR}/Fabric.framework/run\" fe6fca091b291c291b5730b327d6547cc168cac5 9ad5d7feba8486011e5720657f332bc180fb24093e485003cf5d479ce1059798\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1293,6 +1321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Pidvezy/Supporting Files/Pidvezy.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 3KS22VBNNP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1304,6 +1333,7 @@
 					"$(PROJECT_DIR)/Pidvezy/Third-party\\ libraries/FacebookSDK",
 					"$(PROJECT_DIR)/Pidvezy/Third-party\\ libraries/FacebookSDK",
 					"$(PROJECT_DIR)/Pidvezy/Third-party\\ libraries/FacebookSDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Pidvezy/Supporting Files/Pidvezy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1334,6 +1364,7 @@
 					"$(PROJECT_DIR)/Pidvezy/Third-party\\ libraries/FacebookSDK",
 					"$(PROJECT_DIR)/Pidvezy/Third-party\\ libraries/FacebookSDK",
 					"$(PROJECT_DIR)/Pidvezy/Third-party\\ libraries/FacebookSDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Pidvezy/Supporting Files/Pidvezy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
