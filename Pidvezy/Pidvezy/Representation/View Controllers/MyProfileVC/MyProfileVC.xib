@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyProfileVC" customModule="Pidvezy" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="VYf-I9-WZE" id="vLR-oy-OOA"/>
+                <outlet property="emailTFView" destination="Fwh-WU-YqX" id="uqg-nq-cZH"/>
+                <outlet property="homeLocationTFView" destination="LB7-1a-PKG" id="UoG-4a-z7D"/>
+                <outlet property="nameLbl" destination="yje-y2-UK5" id="0JE-cC-1j8"/>
+                <outlet property="phoneNumberTFView" destination="3Zz-Rf-56A" id="ZhT-LM-0yV"/>
+                <outlet property="userAvatar" destination="C78-Zw-hXN" id="bMj-Vu-OIQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="workLocationTFView" destination="f1Z-Tp-MaM" id="ABH-e6-YS0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC2-Nh-Uzr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYf-I9-WZE" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="744"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_placeholer" translatesAutoresizingMaskIntoConstraints="NO" id="C78-Zw-hXN" customClass="RoundImageView" customModule="Pidvezy" customModuleProvider="target">
+                                    <rect key="frame" x="122" y="72" width="132" height="132"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="132" id="7h4-1g-3mc"/>
+                                        <constraint firstAttribute="width" secondItem="C78-Zw-hXN" secondAttribute="height" multiplier="1:1" id="JOd-Kt-hTg"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yje-y2-UK5">
+                                    <rect key="frame" x="129" y="244" width="118" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="oi1-s5-eMd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xOf-S7-4Ac" userLabel="MailPhoneView">
+                                    <rect key="frame" x="0.0" y="308" width="375" height="117"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_grey" translatesAutoresizingMaskIntoConstraints="NO" id="M5O-VY-igk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="117"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwh-WU-YqX" userLabel="emailTF" customClass="TextFieldWithLeftRightIcons" customModule="Pidvezy" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="1" width="375" height="58"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="SAe-gg-rtP"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="withRightIcon" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="rightIconName" value="arrow"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconName" value="repeat_icon"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Zz-Rf-56A" userLabel="phoneNumberTF" customClass="TextFieldWithLeftRightIcons" customModule="Pidvezy" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="59" width="375" height="58"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="gJa-cT-uIG"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="withRightIcon" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="rightIconName" value="arrow"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconName" value="repeat_icon"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone Number"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Fwh-WU-YqX" secondAttribute="trailing" id="4Ya-Iu-6P8"/>
+                                        <constraint firstAttribute="bottom" secondItem="M5O-VY-igk" secondAttribute="bottom" id="5FQ-fd-VIv"/>
+                                        <constraint firstItem="3Zz-Rf-56A" firstAttribute="top" secondItem="Fwh-WU-YqX" secondAttribute="bottom" id="95p-XA-xwD"/>
+                                        <constraint firstItem="3Zz-Rf-56A" firstAttribute="leading" secondItem="xOf-S7-4Ac" secondAttribute="leading" id="J0X-p6-T8r"/>
+                                        <constraint firstItem="M5O-VY-igk" firstAttribute="leading" secondItem="xOf-S7-4Ac" secondAttribute="leading" id="MqY-fu-ds1"/>
+                                        <constraint firstItem="M5O-VY-igk" firstAttribute="top" secondItem="xOf-S7-4Ac" secondAttribute="top" id="N7A-Gj-MBx"/>
+                                        <constraint firstAttribute="trailing" secondItem="3Zz-Rf-56A" secondAttribute="trailing" id="OSV-DK-SuM"/>
+                                        <constraint firstItem="Fwh-WU-YqX" firstAttribute="top" secondItem="xOf-S7-4Ac" secondAttribute="top" constant="0.5" id="Y23-uv-er2"/>
+                                        <constraint firstItem="Fwh-WU-YqX" firstAttribute="leading" secondItem="xOf-S7-4Ac" secondAttribute="leading" id="hN8-IG-U8u"/>
+                                        <constraint firstAttribute="bottom" secondItem="3Zz-Rf-56A" secondAttribute="bottom" id="jHK-hq-CB3"/>
+                                        <constraint firstAttribute="trailing" secondItem="M5O-VY-igk" secondAttribute="trailing" id="vSB-Ri-hFe"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0q-Ay-9q2" userLabel="WorkHomeLocationView">
+                                    <rect key="frame" x="0.0" y="441" width="375" height="117"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_grey" translatesAutoresizingMaskIntoConstraints="NO" id="ohc-65-4HY">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="117"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LB7-1a-PKG" userLabel="HomeLocTF" customClass="TextFieldWithLeftRightIcons" customModule="Pidvezy" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="1" width="375" height="58"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="ihG-Mn-b6l"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="withRightIcon" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="rightIconName" value="arrow"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconName" value="home_icon"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Your Home Address"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1Z-Tp-MaM" userLabel="WorkLocTF" customClass="TextFieldWithLeftRightIcons" customModule="Pidvezy" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="59" width="375" height="58"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="v2P-di-aCQ"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="withRightIcon" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="rightIconName" value="arrow"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconName" value="work_icon"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Your Work Address"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="ohc-65-4HY" firstAttribute="leading" secondItem="N0q-Ay-9q2" secondAttribute="leading" id="7mG-JZ-oQv"/>
+                                        <constraint firstAttribute="trailing" secondItem="f1Z-Tp-MaM" secondAttribute="trailing" id="GSz-oO-ZEb"/>
+                                        <constraint firstItem="f1Z-Tp-MaM" firstAttribute="top" secondItem="LB7-1a-PKG" secondAttribute="bottom" id="Gg9-ji-bsx"/>
+                                        <constraint firstAttribute="bottom" secondItem="f1Z-Tp-MaM" secondAttribute="bottom" id="Kri-J7-Pk4"/>
+                                        <constraint firstAttribute="trailing" secondItem="ohc-65-4HY" secondAttribute="trailing" id="Ldn-f5-6oS"/>
+                                        <constraint firstAttribute="trailing" secondItem="LB7-1a-PKG" secondAttribute="trailing" id="UNT-jA-Ckz"/>
+                                        <constraint firstItem="LB7-1a-PKG" firstAttribute="top" secondItem="N0q-Ay-9q2" secondAttribute="top" constant="1" id="UgL-F7-B5D"/>
+                                        <constraint firstAttribute="bottom" secondItem="ohc-65-4HY" secondAttribute="bottom" id="X34-vj-z5w"/>
+                                        <constraint firstItem="ohc-65-4HY" firstAttribute="top" secondItem="N0q-Ay-9q2" secondAttribute="top" id="fjJ-av-hMY"/>
+                                        <constraint firstItem="LB7-1a-PKG" firstAttribute="leading" secondItem="N0q-Ay-9q2" secondAttribute="leading" id="zhV-Jl-bld"/>
+                                        <constraint firstItem="f1Z-Tp-MaM" firstAttribute="leading" secondItem="N0q-Ay-9q2" secondAttribute="leading" id="zoB-pP-lh5"/>
+                                    </constraints>
+                                </view>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNb-cv-63l" userLabel="AllowNotificationsView">
+                                    <rect key="frame" x="0.0" y="574" width="375" height="58"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border_grey" translatesAutoresizingMaskIntoConstraints="NO" id="e21-HM-0yv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtk-Ua-5S8" userLabel="ViberTF" customClass="TextFieldWithSwitch" customModule="Pidvezy" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="1" width="375" height="58"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="58" id="zee-rK-K1f"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="withRightIcon" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="rightIconName" value="arrow"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="leftIconName" value="home_icon"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="switchEnabled" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="text" value="Viber"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="e21-HM-0yv" firstAttribute="top" secondItem="pNb-cv-63l" secondAttribute="top" id="1gX-Uy-oW1"/>
+                                        <constraint firstItem="dtk-Ua-5S8" firstAttribute="top" secondItem="pNb-cv-63l" secondAttribute="top" constant="1" id="31H-bZ-Iww"/>
+                                        <constraint firstAttribute="height" constant="58" id="Ehf-d8-a6l"/>
+                                        <constraint firstAttribute="trailing" secondItem="e21-HM-0yv" secondAttribute="trailing" id="UJX-J1-MTh"/>
+                                        <constraint firstAttribute="trailing" secondItem="dtk-Ua-5S8" secondAttribute="trailing" id="ViO-ks-tkG"/>
+                                        <constraint firstItem="dtk-Ua-5S8" firstAttribute="leading" secondItem="pNb-cv-63l" secondAttribute="leading" id="WUA-kH-20n"/>
+                                        <constraint firstAttribute="bottom" secondItem="e21-HM-0yv" secondAttribute="bottom" id="bOK-v8-miF"/>
+                                        <constraint firstItem="e21-HM-0yv" firstAttribute="leading" secondItem="pNb-cv-63l" secondAttribute="leading" id="vUx-pm-Nvm"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-Kd-VrY" customClass="DesignableButton" customModule="Pidvezy" customModuleProvider="target">
+                                    <rect key="frame" x="47" y="656" width="280" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="280" id="Mws-lE-ahY"/>
+                                        <constraint firstAttribute="height" constant="64" id="vgG-RK-0ec"/>
+                                    </constraints>
+                                    <state key="normal" title="Save"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                            <color key="value" red="0.0" green="0.47450980392156861" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="saveBtnTapped:" destination="-1" eventType="touchUpInside" id="fNY-xq-Ysf"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="Y0B-Kd-VrY" firstAttribute="centerX" secondItem="VYf-I9-WZE" secondAttribute="centerX" id="1df-yl-znd"/>
+                                <constraint firstItem="C78-Zw-hXN" firstAttribute="top" secondItem="VYf-I9-WZE" secondAttribute="top" constant="72" id="5ES-7p-Gr6"/>
+                                <constraint firstItem="Y0B-Kd-VrY" firstAttribute="top" secondItem="pNb-cv-63l" secondAttribute="bottom" constant="24" id="ALI-L5-Ya0"/>
+                                <constraint firstAttribute="trailing" secondItem="N0q-Ay-9q2" secondAttribute="trailing" id="FUJ-uv-CTw"/>
+                                <constraint firstItem="N0q-Ay-9q2" firstAttribute="leading" secondItem="VYf-I9-WZE" secondAttribute="leading" id="JJV-lg-HBS"/>
+                                <constraint firstItem="pNb-cv-63l" firstAttribute="top" secondItem="N0q-Ay-9q2" secondAttribute="bottom" constant="16" id="NDL-vZ-Eca"/>
+                                <constraint firstItem="xOf-S7-4Ac" firstAttribute="leading" secondItem="VYf-I9-WZE" secondAttribute="leading" id="Pq3-u4-nZ2"/>
+                                <constraint firstAttribute="trailing" secondItem="pNb-cv-63l" secondAttribute="trailing" id="b1x-Ac-Rz8"/>
+                                <constraint firstItem="pNb-cv-63l" firstAttribute="leading" secondItem="VYf-I9-WZE" secondAttribute="leading" id="cIP-jk-cG8"/>
+                                <constraint firstItem="N0q-Ay-9q2" firstAttribute="top" secondItem="xOf-S7-4Ac" secondAttribute="bottom" constant="16" id="dEe-3f-Lxc"/>
+                                <constraint firstAttribute="trailing" secondItem="xOf-S7-4Ac" secondAttribute="trailing" id="jKL-m5-Yfy"/>
+                                <constraint firstItem="yje-y2-UK5" firstAttribute="centerX" secondItem="VYf-I9-WZE" secondAttribute="centerX" id="jvi-rp-Bbh"/>
+                                <constraint firstItem="yje-y2-UK5" firstAttribute="top" secondItem="C78-Zw-hXN" secondAttribute="bottom" constant="40" id="pgA-OU-aaD"/>
+                                <constraint firstItem="C78-Zw-hXN" firstAttribute="centerX" secondItem="VYf-I9-WZE" secondAttribute="centerX" id="qup-uH-zHU"/>
+                                <constraint firstItem="xOf-S7-4Ac" firstAttribute="top" secondItem="yje-y2-UK5" secondAttribute="bottom" constant="40" id="vzV-3w-UBH"/>
+                                <constraint firstAttribute="bottom" secondItem="Y0B-Kd-VrY" secondAttribute="bottom" constant="24" id="xcU-q9-cbY"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="VYf-I9-WZE" secondAttribute="bottom" id="01Y-DM-BzO"/>
+                        <constraint firstItem="VYf-I9-WZE" firstAttribute="top" secondItem="rC2-Nh-Uzr" secondAttribute="top" id="46A-r2-gIR"/>
+                        <constraint firstItem="VYf-I9-WZE" firstAttribute="height" secondItem="rC2-Nh-Uzr" secondAttribute="height" priority="750" id="EYv-dM-agn"/>
+                        <constraint firstItem="VYf-I9-WZE" firstAttribute="width" secondItem="rC2-Nh-Uzr" secondAttribute="width" id="ORb-1Z-dM9"/>
+                        <constraint firstItem="VYf-I9-WZE" firstAttribute="leading" secondItem="rC2-Nh-Uzr" secondAttribute="leading" id="iTr-4c-aMs"/>
+                        <constraint firstAttribute="trailing" secondItem="VYf-I9-WZE" secondAttribute="trailing" id="wD4-th-cWt"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rC2-Nh-Uzr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0C3-xt-Uqw"/>
+                <constraint firstItem="rC2-Nh-Uzr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8XX-NU-14J"/>
+                <constraint firstAttribute="trailing" secondItem="rC2-Nh-Uzr" secondAttribute="trailing" id="g9c-mj-g9g"/>
+                <constraint firstAttribute="bottom" secondItem="rC2-Nh-Uzr" secondAttribute="bottom" id="gXS-mp-yZ0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="32.5" y="100"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="avatar_placeholer" width="150" height="150"/>
+        <image name="border_grey" width="3" height="3"/>
+    </resources>
+</document>

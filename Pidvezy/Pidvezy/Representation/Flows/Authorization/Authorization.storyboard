@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="p6z-9i-KQX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="0Tz-GQ-eg5">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="p6z-9i-KQX" customClass="LoginVC" customModule="Pidvezy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CFK-Wm-PlS"/>
+                        <viewControllerLayoutGuide type="bottom" id="bzU-Pn-QFd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ebd-Ts-0AR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jb3-kQ-BTA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="cFH-f3-qdX" userLabel="Background">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-l4-BJg" userLabel="FBLoginButton" customClass="DesignableButton" customModule="Pidvezy" customModuleProvider="target">
+                                        <rect key="frame" x="47.5" y="468.5" width="280" height="64"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="3BW-xU-oze"/>
+                                            <constraint firstAttribute="height" constant="64" id="gXY-ZN-nbe"/>
+                                        </constraints>
+                                        <state key="normal" title="Login with Facebook"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="fbLoginTapped:" destination="p6z-9i-KQX" eventType="touchUpInside" id="Kp4-A1-Auz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwa-OV-l9b" userLabel="AnonimusLoginBtn">
+                                        <rect key="frame" x="172.5" y="548.5" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Gwa-OV-l9b" secondAttribute="height" multiplier="1:1" id="Luc-Vn-NSV"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="anonLoginTapped:" destination="p6z-9i-KQX" eventType="touchUpInside" id="qJN-HO-rHX"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pidvezy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHe-pi-p4h">
+                                        <rect key="frame" x="105" y="330" width="165" height="57.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="KcE-av-893">
+                                        <rect key="frame" x="112.5" y="145.5" width="150" height="176"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="176" id="5NZ-r6-TiS"/>
+                                            <constraint firstAttribute="width" constant="150" id="s69-vq-NGj"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cFH-f3-qdX" secondAttribute="trailing" id="3el-4Y-nnP"/>
+                                    <constraint firstItem="Gwa-OV-l9b" firstAttribute="top" secondItem="Ie9-l4-BJg" secondAttribute="bottom" constant="16" id="IgH-pY-o1g"/>
+                                    <constraint firstItem="KcE-av-893" firstAttribute="centerY" secondItem="jb3-kQ-BTA" secondAttribute="centerY" multiplier="0.7" id="Mco-Yq-GgC"/>
+                                    <constraint firstItem="Ie9-l4-BJg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="rHe-pi-p4h" secondAttribute="bottom" constant="50" id="Okr-wl-vnJ"/>
+                                    <constraint firstItem="cFH-f3-qdX" firstAttribute="leading" secondItem="jb3-kQ-BTA" secondAttribute="leading" id="P5U-Ok-LOZ"/>
+                                    <constraint firstItem="rHe-pi-p4h" firstAttribute="centerX" secondItem="jb3-kQ-BTA" secondAttribute="centerX" id="U30-qe-FiE"/>
+                                    <constraint firstAttribute="bottom" secondItem="cFH-f3-qdX" secondAttribute="bottom" id="gfp-eN-VOQ"/>
+                                    <constraint firstItem="rHe-pi-p4h" firstAttribute="top" secondItem="KcE-av-893" secondAttribute="bottom" constant="8" id="jSt-lx-2Sp"/>
+                                    <constraint firstItem="Gwa-OV-l9b" firstAttribute="centerX" secondItem="jb3-kQ-BTA" secondAttribute="centerX" id="lsd-ee-QOs"/>
+                                    <constraint firstItem="KcE-av-893" firstAttribute="centerX" secondItem="jb3-kQ-BTA" secondAttribute="centerX" id="r8N-yb-CkN"/>
+                                    <constraint firstItem="Ie9-l4-BJg" firstAttribute="centerY" secondItem="jb3-kQ-BTA" secondAttribute="centerY" multiplier="1.5" priority="750" id="rLs-F3-uF5"/>
+                                    <constraint firstItem="cFH-f3-qdX" firstAttribute="top" secondItem="jb3-kQ-BTA" secondAttribute="top" id="tGY-Ws-tzA"/>
+                                    <constraint firstItem="Ie9-l4-BJg" firstAttribute="centerX" secondItem="jb3-kQ-BTA" secondAttribute="centerX" id="vQN-IR-lXy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bzU-Pn-QFd" firstAttribute="top" secondItem="jb3-kQ-BTA" secondAttribute="bottom" id="BsA-7U-lFn"/>
+                            <constraint firstItem="jb3-kQ-BTA" firstAttribute="leading" secondItem="Ebd-Ts-0AR" secondAttribute="leading" id="XUs-Xw-gR8"/>
+                            <constraint firstAttribute="trailing" secondItem="jb3-kQ-BTA" secondAttribute="trailing" id="hbX-Io-uOl"/>
+                            <constraint firstItem="jb3-kQ-BTA" firstAttribute="top" secondItem="Ebd-Ts-0AR" secondAttribute="top" id="jD5-7k-NaZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="anonLoginBtn" destination="Gwa-OV-l9b" id="BkL-U7-6X2"/>
+                        <outlet property="facebookBtn" destination="Ie9-l4-BJg" id="oZm-MS-hcs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxC-iw-93i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210.40000000000001" y="134.48275862068968"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="app_logo" width="145" height="175"/>
+        <image name="splash_background" width="375" height="667"/>
+    </resources>
+</document>

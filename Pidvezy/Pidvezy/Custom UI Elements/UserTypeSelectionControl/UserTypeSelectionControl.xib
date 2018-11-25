@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserTypeSelectionControl" customModule="Pidvezy" customModuleProvider="target">
+            <connections>
+                <outlet property="backdroundIV" destination="1Fw-iN-q8b" id="fSB-cd-7fm"/>
+                <outlet property="typeLbl" destination="gXp-iX-md2" id="hUW-7A-1Xz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yla-Hq-aNq" userLabel="DriverControl">
+            <rect key="frame" x="0.0" y="0.0" width="172" height="152"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Fw-iN-q8b">
+                    <rect key="frame" x="0.0" y="0.0" width="172" height="152"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXp-iX-md2" userLabel="DriverLbl">
+                    <rect key="frame" x="8" y="0.0" width="156" height="152"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1Fw-iN-q8b" secondAttribute="bottom" id="5y3-60-IgL"/>
+                <constraint firstItem="1Fw-iN-q8b" firstAttribute="leading" secondItem="yla-Hq-aNq" secondAttribute="leading" id="Egf-wu-dsN"/>
+                <constraint firstAttribute="bottom" secondItem="gXp-iX-md2" secondAttribute="bottom" id="Qhg-ah-x3l"/>
+                <constraint firstItem="gXp-iX-md2" firstAttribute="top" secondItem="yla-Hq-aNq" secondAttribute="top" id="Ri7-K2-oEL"/>
+                <constraint firstAttribute="trailing" secondItem="gXp-iX-md2" secondAttribute="trailing" constant="8" id="S2R-9g-qH2"/>
+                <constraint firstItem="1Fw-iN-q8b" firstAttribute="top" secondItem="yla-Hq-aNq" secondAttribute="top" id="TzG-Jj-aPa"/>
+                <constraint firstItem="gXp-iX-md2" firstAttribute="leading" secondItem="yla-Hq-aNq" secondAttribute="leading" constant="8" id="cyn-2v-xNj"/>
+                <constraint firstAttribute="trailing" secondItem="1Fw-iN-q8b" secondAttribute="trailing" id="yNo-RL-BDt"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="56" y="68"/>
+        </view>
+    </objects>
+</document>

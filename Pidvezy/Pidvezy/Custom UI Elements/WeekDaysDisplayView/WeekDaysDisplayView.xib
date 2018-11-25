@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeekDaysDisplayView" customModule="Pidvezy" customModuleProvider="target">
+            <connections>
+                <outletCollection property="weekdays" destination="ktI-Oa-iM7" collectionClass="NSMutableArray" id="BEg-3g-Lv1"/>
+                <outletCollection property="weekdays" destination="2vd-xS-49W" collectionClass="NSMutableArray" id="UBW-y5-1km"/>
+                <outletCollection property="weekdays" destination="QPJ-Jf-lXg" collectionClass="NSMutableArray" id="99n-ah-z5u"/>
+                <outletCollection property="weekdays" destination="1ed-n7-NH5" collectionClass="NSMutableArray" id="bzL-jW-e3B"/>
+                <outletCollection property="weekdays" destination="3fY-GH-jZd" collectionClass="NSMutableArray" id="qY0-EZ-ByY"/>
+                <outletCollection property="weekdays" destination="oDu-AB-eFY" collectionClass="NSMutableArray" id="W48-Zo-Ufm"/>
+                <outletCollection property="weekdays" destination="Jen-aJ-9eT" collectionClass="NSMutableArray" id="MEK-zG-dyE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="273" height="28"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oq7-xJ-CFW" userLabel="MonContainer">
+                    <rect key="frame" x="0.0" y="0.0" width="39" height="28"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktI-Oa-iM7" userLabel="monday" customClass="WeekDayButton" customModule="Pidvezy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="28"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Mon">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13Y-QX-BAN" userLabel="Separator">
+                            <rect key="frame" x="38" y="0.0" width="1" height="28"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="jej-o0-WYu"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="13Y-QX-BAN" firstAttribute="height" secondItem="ktI-Oa-iM7" secondAttribute="height" id="Dve-72-COa"/>
+                        <constraint firstItem="ktI-Oa-iM7" firstAttribute="leading" secondItem="Oq7-xJ-CFW" secondAttribute="leading" id="EOH-VZ-NJu"/>
+                        <constraint firstItem="ktI-Oa-iM7" firstAttribute="top" secondItem="Oq7-xJ-CFW" secondAttribute="top" id="F4L-0I-vKh"/>
+                        <constraint firstAttribute="trailing" secondItem="13Y-QX-BAN" secondAttribute="trailing" id="Ic2-SD-tOC"/>
+                        <constraint firstAttribute="bottom" secondItem="ktI-Oa-iM7" secondAttribute="bottom" id="b0K-ZL-08n"/>
+                        <constraint firstItem="13Y-QX-BAN" firstAttribute="leading" secondItem="ktI-Oa-iM7" secondAttribute="trailing" id="k4v-Ng-TLA"/>
+                        <constraint firstItem="13Y-QX-BAN" firstAttribute="centerY" secondItem="ktI-Oa-iM7" secondAttribute="centerY" id="ugO-bh-VVu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8w-CF-2ZA" userLabel="TueContainer">
+                    <rect key="frame" x="39" y="0.0" width="39" height="28"/>
+                    <subviews>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vd-xS-49W" userLabel="monday" customClass="WeekDayButton" customModule="Pidvezy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="28"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Tue">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TN7-GB-Qmv" userLabel="Separator">
+                            <rect key="frame" x="38" y="0.0" width="1" height="28"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="Ita-aH-jaz"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TN7-GB-Qmv" firstAttribute="centerY" secondItem="2vd-xS-49W" secondAttribute="centerY" id="2Lv-g9-s9n"/>
+                        <constraint firstAttribute="trailing" secondItem="TN7-GB-Qmv" secondAttribute="trailing" id="I2l-Je-lSl"/>
+                        <constraint firstItem="TN7-GB-Qmv" firstAttribute="height" secondItem="2vd-xS-49W" secondAttribute="height" id="btX-Z9-smU"/>
+                        <constraint firstAttribute="bottom" secondItem="2vd-xS-49W" secondAttribute="bottom" id="c6d-wU-0Yy"/>
+                        <constraint firstItem="2vd-xS-49W" firstAttribute="leading" secondItem="P8w-CF-2ZA" secondAttribute="leading" id="dns-Df-f4s"/>
+                        <constraint firstItem="2vd-xS-49W" firstAttribute="top" secondItem="P8w-CF-2ZA" secondAttribute="top" id="ggT-HB-iA8"/>
+                        <constraint firstItem="TN7-GB-Qmv" firstAttribute="leading" secondItem="2vd-xS-49W" secondAttribute="trailing" id="h0L-iz-Yc1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-TW-5a2" userLabel="WedContainer">
+                    <rect key="frame" x="78" y="0.0" width="39" height="28"/>
+                    <subviews>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPJ-Jf-lXg" userLabel="monday" customClass="WeekDayButton" customModule="Pidvezy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="28"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Wed">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esc-H6-UbA" userLabel="Separator">
+                            <rect key="frame" x="38" y="0.0" width="1" height="28"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="5gY-Fn-OzU"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="esc-H6-UbA" firstAttribute="leading" secondItem="QPJ-Jf-lXg" secondAttribute="trailing" id="Av5-me-oVU"/>
+                        <constraint firstAttribute="bottom" secondItem="QPJ-Jf-lXg" secondAttribute="bottom" id="Gjm-up-A6p"/>
+                        <constraint firstItem="esc-H6-UbA" firstAttribute="height" secondItem="QPJ-Jf-lXg" secondAttribute="height" id="VmZ-bx-RLs"/>
+                        <constraint firstItem="esc-H6-UbA" firstAttribute="centerY" secondItem="QPJ-Jf-lXg" secondAttribute="centerY" id="ZAy-Zr-1Bm"/>
+                        <constraint firstItem="QPJ-Jf-lXg" firstAttribute="top" secondItem="L6t-TW-5a2" secondAttribute="top" id="hpE-wX-ASE"/>
+                        <constraint firstItem="QPJ-Jf-lXg" firstAttribute="leading" secondItem="L6t-TW-5a2" secondAttribute="leading" id="oXe-Af-BSJ"/>
+                        <constraint firstAttribute="trailing" secondItem="esc-H6-UbA" secondAttribute="trailing" id="ysy-t0-t8G"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvW-FP-LlS" userLabel="ThuContainer">
+                    <rect key="frame" x="117" y="0.0" width="39" height="28"/>
+                    <subviews>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ed-n7-NH5" userLabel="monday" customClass="WeekDayButton" customModule="Pidvezy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="28"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Thu">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3h-w7-kSA" userLabel="Separator">
+                            <rect key="frame" x="38" y="0.0" width="1" height="28"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="DF7-8a-rsQ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="1ed-n7-NH5" secondAttribute="bottom" id="5Ds-jd-V31"/>
+                        <constraint firstItem="1ed-n7-NH5" firstAttribute="leading" secondItem="lvW-FP-LlS" secondAttribute="leading" id="CUM-Z2-Gbb"/>
+                        <constraint firstItem="1ed-n7-NH5" firstAttribute="top" secondItem="lvW-FP-LlS" secondAttribute="top" id="GrD-hx-qn3"/>
+                        <constraint firstItem="t3h-w7-kSA" firstAttribute="height" secondItem="1ed-n7-NH5" secondAttribute="height" id="Oug-zR-sxS"/>
+                        <constraint firstAttribute="trailing" secondItem="t3h-w7-kSA" secondAttribute="trailing" id="XnO-Rm-BOR"/>
+                        <constraint firstItem="t3h-w7-kSA" firstAttribute="centerY" secondItem="1ed-n7-NH5" secondAttribute="centerY" id="gr5-0g-jN1"/>
+                        <constraint firstItem="t3h-w7-kSA" firstAttribute="leading" secondItem="1ed-n7-NH5" secondAttribute="trailing" id="tMW-Qh-4tR"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fg-Bw-kXP" userLabel="FriContainer">
+                    <rect key="frame" x="156" y="0.0" width="39" height="28"/>
+                    <subviews>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-GH-jZd" userLabel="monday" customClass="WeekDayButton" customModule="Pidvezy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="28"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Fri">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-N3-bd8" userLabel="Separator">
+                            <rect key="frame" x="38" y="0.0" width="1" height="28"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="fvN-uY-hKj"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="3fY-GH-jZd" secondAttribute="bottom" id="10s-b3-F4V"/>
+                        <constraint firstItem="3fY-GH-jZd" firstAttribute="leading" secondItem="6fg-Bw-kXP" secondAttribute="leading" id="F4d-4D-vU0"/>
+                        <constraint firstItem="dpP-N3-bd8" firstAttribute="centerY" secondItem="3fY-GH-jZd" secondAttribute="centerY" id="JSB-K0-XEK"/>
+                        <constraint firstItem="dpP-N3-bd8" firstAttribute="height" secondItem="3fY-GH-jZd" secondAttribute="height" id="OMQ-fl-Oki"/>
+                        <constraint firstItem="3fY-GH-jZd" firstAttribute="top" secondItem="6fg-Bw-kXP" secondAttribute="top" id="h5h-JE-PiC"/>
+                        <constraint firstAttribute="trailing" secondItem="dpP-N3-bd8" secondAttribute="trailing" id="kQL-1d-7DN"/>
+                        <constraint firstItem="dpP-N3-bd8" firstAttribute="leading" secondItem="3fY-GH-jZd" secondAttribute="trailing" id="sbo-sL-XQ6"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qJ-Oc-uV3" userLabel="SatContainer">
+                    <rect key="frame" x="195" y="0.0" width="39" height="28"/>
+                    <subviews>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDu-AB-eFY" userLabel="monday" customClass="WeekDayButton" customModule="Pidvezy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="38" height="28"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Sat">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjW-Yp-vgH" userLabel="Separator">
+                            <rect key="frame" x="38" y="0.0" width="1" height="28"/>
+                            <color key="backgroundColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="eFa-2z-ozh"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="oDu-AB-eFY" firstAttribute="leading" secondItem="3qJ-Oc-uV3" secondAttribute="leading" id="08B-bV-qRN"/>
+                        <constraint firstItem="PjW-Yp-vgH" firstAttribute="leading" secondItem="oDu-AB-eFY" secondAttribute="trailing" id="1PY-ET-fWo"/>
+                        <constraint firstAttribute="bottom" secondItem="oDu-AB-eFY" secondAttribute="bottom" id="IDa-OI-GgA"/>
+                        <constraint firstAttribute="trailing" secondItem="PjW-Yp-vgH" secondAttribute="trailing" id="ScN-uz-pIz"/>
+                        <constraint firstItem="oDu-AB-eFY" firstAttribute="top" secondItem="3qJ-Oc-uV3" secondAttribute="top" id="aqb-Wb-0wO"/>
+                        <constraint firstItem="PjW-Yp-vgH" firstAttribute="height" secondItem="oDu-AB-eFY" secondAttribute="height" id="i70-0k-GEp"/>
+                        <constraint firstItem="PjW-Yp-vgH" firstAttribute="centerY" secondItem="oDu-AB-eFY" secondAttribute="centerY" id="t1q-7q-OXP"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgv-4B-QCo" userLabel="SunContainer">
+                    <rect key="frame" x="234" y="0.0" width="39" height="28"/>
+                    <subviews>
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jen-aJ-9eT" userLabel="monday" customClass="WeekDayButton" customModule="Pidvezy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="39" height="28"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="Sun">
+                                <color key="titleColor" red="0.0" green="0.47450980390000003" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Jen-aJ-9eT" firstAttribute="leading" secondItem="Rgv-4B-QCo" secondAttribute="leading" id="9ig-Dc-Hfu"/>
+                        <constraint firstAttribute="trailing" secondItem="Jen-aJ-9eT" secondAttribute="trailing" id="V58-Ph-0r4"/>
+                        <constraint firstItem="Jen-aJ-9eT" firstAttribute="top" secondItem="Rgv-4B-QCo" secondAttribute="top" id="xmJ-yK-g3a"/>
+                        <constraint firstAttribute="bottom" secondItem="Jen-aJ-9eT" secondAttribute="bottom" id="zDn-Ss-cfI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="L6t-TW-5a2" firstAttribute="leading" secondItem="P8w-CF-2ZA" secondAttribute="trailing" id="1ek-MZ-saR"/>
+                <constraint firstItem="Oq7-xJ-CFW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="30Z-gn-xhI"/>
+                <constraint firstItem="6fg-Bw-kXP" firstAttribute="height" secondItem="lvW-FP-LlS" secondAttribute="height" id="4bV-hc-E97"/>
+                <constraint firstItem="lvW-FP-LlS" firstAttribute="width" secondItem="L6t-TW-5a2" secondAttribute="width" id="AED-5y-sb4"/>
+                <constraint firstItem="Rgv-4B-QCo" firstAttribute="height" secondItem="3qJ-Oc-uV3" secondAttribute="height" id="AU6-CR-uMB"/>
+                <constraint firstItem="Rgv-4B-QCo" firstAttribute="width" secondItem="3qJ-Oc-uV3" secondAttribute="width" id="AsC-WT-p7M"/>
+                <constraint firstItem="Oq7-xJ-CFW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GRQ-MZ-6F8"/>
+                <constraint firstItem="L6t-TW-5a2" firstAttribute="width" secondItem="P8w-CF-2ZA" secondAttribute="width" id="LeJ-s0-Hmy"/>
+                <constraint firstItem="3qJ-Oc-uV3" firstAttribute="leading" secondItem="6fg-Bw-kXP" secondAttribute="trailing" id="NLE-wI-cnC"/>
+                <constraint firstItem="P8w-CF-2ZA" firstAttribute="height" secondItem="Oq7-xJ-CFW" secondAttribute="height" id="QH7-zD-2Zr"/>
+                <constraint firstItem="3qJ-Oc-uV3" firstAttribute="centerY" secondItem="6fg-Bw-kXP" secondAttribute="centerY" id="QHI-hB-7vL"/>
+                <constraint firstItem="Rgv-4B-QCo" firstAttribute="centerY" secondItem="3qJ-Oc-uV3" secondAttribute="centerY" id="Rt1-8h-YU6"/>
+                <constraint firstItem="3qJ-Oc-uV3" firstAttribute="height" secondItem="6fg-Bw-kXP" secondAttribute="height" id="Ryc-24-EYD"/>
+                <constraint firstItem="L6t-TW-5a2" firstAttribute="height" secondItem="P8w-CF-2ZA" secondAttribute="height" id="TCx-6O-MbZ"/>
+                <constraint firstItem="lvW-FP-LlS" firstAttribute="height" secondItem="L6t-TW-5a2" secondAttribute="height" id="VIu-5v-rNz"/>
+                <constraint firstItem="lvW-FP-LlS" firstAttribute="centerY" secondItem="L6t-TW-5a2" secondAttribute="centerY" id="Wgq-jm-vll"/>
+                <constraint firstItem="lvW-FP-LlS" firstAttribute="leading" secondItem="L6t-TW-5a2" secondAttribute="trailing" id="Xel-qL-sFW"/>
+                <constraint firstItem="6fg-Bw-kXP" firstAttribute="width" secondItem="lvW-FP-LlS" secondAttribute="width" id="Ypr-Sk-WaU"/>
+                <constraint firstItem="L6t-TW-5a2" firstAttribute="centerY" secondItem="P8w-CF-2ZA" secondAttribute="centerY" id="a1m-b9-xwt"/>
+                <constraint firstItem="6fg-Bw-kXP" firstAttribute="centerY" secondItem="lvW-FP-LlS" secondAttribute="centerY" id="aDN-iP-1W8"/>
+                <constraint firstItem="ktI-Oa-iM7" firstAttribute="width" secondItem="2vd-xS-49W" secondAttribute="width" id="hLb-vE-UWu"/>
+                <constraint firstItem="P8w-CF-2ZA" firstAttribute="centerY" secondItem="Oq7-xJ-CFW" secondAttribute="centerY" id="nmz-wC-UmN"/>
+                <constraint firstAttribute="bottom" secondItem="Oq7-xJ-CFW" secondAttribute="bottom" id="pfh-Ub-5vO"/>
+                <constraint firstItem="P8w-CF-2ZA" firstAttribute="leading" secondItem="Oq7-xJ-CFW" secondAttribute="trailing" id="pi0-O7-ift"/>
+                <constraint firstItem="Rgv-4B-QCo" firstAttribute="leading" secondItem="3qJ-Oc-uV3" secondAttribute="trailing" id="tF8-BN-NIX"/>
+                <constraint firstAttribute="trailing" secondItem="Rgv-4B-QCo" secondAttribute="trailing" id="vWY-zy-Ca8"/>
+                <constraint firstItem="6fg-Bw-kXP" firstAttribute="leading" secondItem="lvW-FP-LlS" secondAttribute="trailing" id="xG8-cK-leg"/>
+                <constraint firstItem="3qJ-Oc-uV3" firstAttribute="width" secondItem="6fg-Bw-kXP" secondAttribute="width" id="ysC-De-Afh"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="52.5" y="366"/>
+        </view>
+    </objects>
+</document>

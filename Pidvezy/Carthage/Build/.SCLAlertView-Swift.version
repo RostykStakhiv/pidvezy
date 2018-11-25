@@ -1,0 +1,9 @@
+{
+  "commitish" : "17f7c90dfc9c7f15564e84621d48441d403323ee",
+  "iOS" : [
+    {
+      "name" : "SCLAlertView",
+      "hash" : "44a0cb939ef146da99002b6752ca5ed0158d90ebeb6603d1601b2fb154582db0"
+    }
+  ]
+}
