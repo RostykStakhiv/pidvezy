@@ -93,7 +93,7 @@ class MyRoutesVC: BaseVC, UITableViewDataSource, MyRouteTVCellDelegate {
     private func setupUI() {
         self.title = "My Routes".localized
         
-        self.myRoutesTV.rowHeight = UITableViewAutomaticDimension
+        self.myRoutesTV.rowHeight = UITableView.automaticDimension
         self.myRoutesTV.estimatedRowHeight = 280
         
         let routeInfoCellNib = UINib.init(nibName: String(describing: MyRouteTVCell.self), bundle: nil)

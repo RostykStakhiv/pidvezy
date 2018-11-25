@@ -57,7 +57,7 @@ class AddressInputVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: kAutocompleteResultCellID)
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: kAutocompleteResultCellID)
         let lPredModel = predictionsArray[indexPath.row]
         
         cell.textLabel?.text = lPredModel.description
@@ -78,7 +78,7 @@ class AddressInputVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     }
     
     //MARK: UITextField Event Handling Methids
-    func textFieldDidChange(_ textField: UITextField) {
+    @objc func textFieldDidChange(_ textField: UITextField) {
         GooglePlacesManager.sharedManager.autocompleteSearchFor(textField.text!, sucessHandler: { (result) in
             self.predictionsArray = result
             self.resultsTV.reloadData()

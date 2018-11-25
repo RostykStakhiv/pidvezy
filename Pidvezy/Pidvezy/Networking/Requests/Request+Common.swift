@@ -139,7 +139,7 @@ extension Request {
             let contentType = "Content-Type: image/jpeg\n".data(using: .utf8),
             let newline = "\n".data(using: .utf8),
             let contentDisposition = "Content-Disposition: form-data; name=\"\(data.name)\"; filename=\"image\"\n".data(using: .utf8),
-            let imageData = UIImageJPEGRepresentation(data.image, 0.5) {
+            let imageData = data.image.jpegData(compressionQuality: 0.5) {
             payload.append(boundaryData)
             payload.append(contentDisposition)
             payload.append(contentType)

@@ -12,7 +12,7 @@ import UIKit
         viewToDraw.frame = bounds
         
         // Make the view stretch with containing view
-        viewToDraw.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        viewToDraw.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         // Adding custom subview on top of our view (over any custom drawing > see note below)
         self.addSubview(viewToDraw)
     }
