@@ -40,7 +40,7 @@ class UserProvider {
 //        Dispatcher.shared.processRequest(request: getCurrentUserRequest)
         let userJson = ["id": "55dd6be9ece39a6cf774d6df",
                         "name": "Rostyslav Stakhiv",
-                        "fb_id": "911580392233202",
+                        "fb_id": "100006848478338",
                         "email": "rost.stakhiv@gmail.com",
                         "phone": "+380637325386",
                         "locale": "uk_UA",

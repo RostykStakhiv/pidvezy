@@ -47,13 +47,12 @@ class GetPlaceDetailsWithIdRequest: Request {
         let params = ["placeid": placeId,
                       "key": GoogleSDKConstants.kGoogleAPIKey]
         
-        request.httpMethod = "GET"
-        request.url = URL(string: BaseURLs.GooglePlaceDetailsBaseURL)
-        do {
-            let postData = try JSONSerialization.data(withJSONObject: params, options: [])
-            request.httpBody = postData
-        } catch {
+        guard let requestURL = URLEncoder.buildEncodedURL(withUrlString: BaseURLs.GooglePlaceDetailsBaseURL, params: params) else {
+            return request
         }
+        
+        request.httpMethod = "GET"
+        request.url = requestURL
         
         return request
     }

@@ -9,6 +9,10 @@ class DataModel {
     private init() {
     }
     
+    lazy var childContext: NSManagedObjectContext = {
+        let context = createChildContext()
+        return context
+    }()
 
     // MARK: Core Data Stack setup
     private lazy var managedObjectContext: NSManagedObjectContext = {
@@ -121,10 +125,10 @@ class DataModel {
     }()
     
     // MARK: public
-    func saveContext () {
-        if managedObjectContext.hasChanges {
+    func saveContext(_ context: NSManagedObjectContext) {
+        if context.hasChanges {
             do {
-                try managedObjectContext.save()
+                try context.save()
             } catch {
                 //TODO: Handle error
                 let nserror = error as NSError
@@ -133,11 +137,16 @@ class DataModel {
         }
     }
     
-    func emptyObject(name: String) -> NSManagedObject {
+    func rollbackContext(_ context: NSManagedObjectContext) {
+        if context.hasChanges {
+            context.rollback()
+        }
+    }
+    
+    func emptyObject(name: String, inContext context: NSManagedObjectContext) -> NSManagedObject {
         let entity = NSEntityDescription.entity(forEntityName: name, in: managedObjectContext)!
         return NSManagedObject(entity:entity, insertInto:managedObjectContext)
     }
-    
     
     //MARK: Private Methods
     private func recycleUniqueEntity(entity: ModelMapper.Type, id: Any) -> Any? {
@@ -151,7 +160,7 @@ class DataModel {
         }
         
         guard let existingFetchRequest = fetchRequest, let fetchedEntity = fetchUniqueEntity(request: existingFetchRequest) else {
-            return emptyObject(name: entity.entityName)
+            return emptyObject(name: entity.entityName, inContext: managedObjectContext)
         }
         
         return fetchedEntity
@@ -195,6 +204,20 @@ class DataModel {
         } catch _ as NSError {
             // TODO: handle the error
         }
+    }
+}
+
+//MARK: Child Context
+extension DataModel {
+    func createChildContext(concurrencyType: NSManagedObjectContextConcurrencyType = .mainQueueConcurrencyType) -> NSManagedObjectContext {
+        let childContext = NSManagedObjectContext(concurrencyType: concurrencyType)
+        childContext.parent = managedObjectContext
+        return childContext
+    }
+    
+    func getObject(withId objectId: NSManagedObjectID, fromContext context: NSManagedObjectContext) -> NSManagedObject? {
+        let fetchedObject = context.object(with: objectId)
+        return fetchedObject
     }
 }
 

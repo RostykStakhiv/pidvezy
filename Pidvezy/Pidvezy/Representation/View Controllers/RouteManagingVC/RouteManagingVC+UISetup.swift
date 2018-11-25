@@ -9,17 +9,17 @@ extension RouteManagingVC {
         self.selectionTypeLbl.text = "I am a".localized
         
         switch self.action {
-        case .search():
+        case .search:
             self.selectionTypeLbl.text = "I am looking for".localized
             self.title = "Search Route".localized
             self.actionButton.setTitle("Search".localized, for: .normal)
             self.departureDateTFHeight.constant = 0
             self.weekDaysViewHeight.constant = 0
             self.regularitySwitchViewHeight.constant = 0
-        case .edit():
+        case .edit:
             self.title = "Edit Route".localized
             self.actionButton.setTitle("Save".localized, for: .normal)
-        case .create():
+        case .create:
             self.title = "Create Route".localized
             self.actionButton.setTitle("Create".localized, for: .normal)
             self.route.regularity = "regular"
@@ -37,9 +37,9 @@ extension RouteManagingVC {
             self.weekDaysView.setActiveDays(days: days)
         }
         
-//        if self.route.routePoints.count < 2 {
-//            self.route.routePoints = self.createInitialModelsArray()
-//        }
+        if self.route.routePoints == nil || self.route.routePoints!.count < 2 {
+            self.route.routePoints = self.createInitialModelsArray()
+        }
         
         if let routePoints = self.route.routePoints {
             self.routesTV.models = routePoints

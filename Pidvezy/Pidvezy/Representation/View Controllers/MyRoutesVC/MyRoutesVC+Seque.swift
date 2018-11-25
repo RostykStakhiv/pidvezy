@@ -10,13 +10,13 @@ extension MyRoutesVC {
             switch segueID {
             case kSearchRouteSegueID:
                 let routeManaginVC = segue.destination as! RouteManagingVC
-                routeManaginVC.action = .search()
+                routeManaginVC.action = .search
             case kCreateRouteSegueID:
                 let routeManaginVC = segue.destination as! RouteManagingVC
-                routeManaginVC.action = .create()
-                routeManaginVC.successHandler = { (routeModel) in
+                routeManaginVC.action = .create
+                routeManaginVC.successHandler = { (route) in
                     _ = SCLAlertView().showSuccess("", subTitle: kRouteHasBeenCreated.localized)
-                    self.routes.append(routeModel)
+                    self.routes.append(route)
                     self.myRoutesTV.reloadData()
                 }
             default:

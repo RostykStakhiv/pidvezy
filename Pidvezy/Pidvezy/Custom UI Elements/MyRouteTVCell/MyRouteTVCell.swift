@@ -4,9 +4,9 @@ import UIKit
 let kMyRouteTVCellReuseID = "MyRouteTVCell"
 
 enum MyRouteCellAction {
-    case edit()
-    case find()
-    case remove()
+    case edit
+    case find
+    case remove
 }
 
 protocol MyRouteTVCellDelegate: class {
@@ -54,14 +54,14 @@ class MyRouteTVCell: UITableViewCell {
     
     //MARK: IBActions
     @IBAction func editBtnTapped(_ sender: Any) {
-        self.delegate?.actionBtnTappedWith(action: .edit(), forRow: self.row)
+        self.delegate?.actionBtnTappedWith(action: .edit, forRow: self.row)
     }
     
     @IBAction func findBtnTapped(_ sender: Any) {
-        self.delegate?.actionBtnTappedWith(action: .find(), forRow: self.row)
+        self.delegate?.actionBtnTappedWith(action: .find, forRow: self.row)
     }
     
     @IBAction func removeBtnTapped(_ sender: Any) {
-        self.delegate?.actionBtnTappedWith(action: .remove(), forRow: self.row)
+        self.delegate?.actionBtnTappedWith(action: .remove, forRow: self.row)
     }
 }

@@ -44,10 +44,10 @@ class MyRoutesVC: BaseVC, UITableViewDataSource, MyRouteTVCellDelegate {
         let route = self.routes[row]
         
         switch act {
-        case .edit():
+        case .edit:
             let routeManagingVC = InterfaceManager.sharedManager.mainFlowStoryboard.instantiateViewController(withIdentifier: kRouteManagingVCID) as! RouteManagingVC
             routeManagingVC.route = route
-            routeManagingVC.action = .edit()
+            routeManagingVC.action = .edit
             routeManagingVC.successHandler = { (routeModel) in
                 
                 _ = SCLAlertView().showSuccess("", subTitle: kRouteHasBeenSaved.localized)
@@ -56,8 +56,50 @@ class MyRoutesVC: BaseVC, UITableViewDataSource, MyRouteTVCellDelegate {
             }
             
             self.navigationController?.pushViewController(routeManagingVC, animated: true)
-        case .find(): break
-            
+        case .find:
+        let routeDict = [
+            "id": "58d7d9329e74fd2620a1a5b8",
+            "fb_id": "911580392233202",
+            "name": "Going Home",
+            "addr_s": "вулиця Кам'янецька 1а, Львів, Львівська область, Україна",
+            "addr_m": [],
+            "addr_e": "готель Гетьман, вулиця Володимира Великого, Львів, Львівська область, Україна",
+            "loc_s": [49.8093317, 24.038011299999994],
+            "loc_m": [],
+            "loc_e": [49.8116746, 23.99085809999997],
+            "regularity": "regular",
+            "regular_days": [1, 2, 3, 4, 5],
+            "time": "1900-01-01T05:00:00",
+            "type": "driver",
+            "created_on": "2017-03-26T12:20:45.999000",
+            "last_update": "2017-03-26T15:24:03.680000",
+            "polyline_points": "ik_oHq|uqC??@@UxAEH[@o@IiAW{Ag@k@c@mE{C}CnMsCuBw@|CmDdPsAxGiChL_AzEcCjLm@zCXDlCVpCXpDT_@`ZEzGbAFtLh@nADxQ~@rBLOjIQrHMtC_@bEWtC}@fIeAhI}ApLUfCI~Bk@bZc@~Ic@rAIBEDS\\Gf@Dh@FTDFXzB[dGcArSWnFe@hJ}@SKvA??",
+            "user_id": "55dd6be9ece39a6cf774d6df",
+            "user": ["id": "55dd6be9ece39a6cf774d6df",
+                     "name": "Rostyslav Stakhiv",
+                     "fb_id": "911580392233202",
+                     "email": "rost.stakhiv@gmail.com",
+                     "phone": "+380637325386",
+                     "locale": "uk_UA",
+                     "description": "CTO в Підвезу!",
+                     "gender": "male",
+                     "registered_on": "2015-08-26T04:34:01",
+                     "location": "Київ, місто Київ, Україна",
+                     "city_addr": "Київ, місто Київ, Україна",
+                     "city_coords": [50.4501, 30.5234],
+                     "home_addr": "вул.Мельникова 42, Київ, місто Київ, Україна",
+                     "home_coords": [50.12345, 30.12345],
+                     "work_addr": "вул. Хрещатик 1, Київ, місто Київ, Україна",
+                     "work_coords": [50.98765, 30.98765],
+                     "routes": [
+                        "58d7d9329e74fd2620a1a5b8"] as [String]
+                ] as [String: Any]
+            ] as [String: Any]
+        
+        if let parsedRoute = DataModel.shared.parseRoute(data: routeDict) {
+            let searchResultVC = RouteSearchResultsVC(routes: [parsedRoute])
+            self.navigationController?.pushViewController(searchResultVC, animated: true)
+            }
 //            _ = RequestManager.sharedManager.performRequest(RouteManagingRouter(endpoint: .searchRoutesWithModel(model: model)), showActiviti: true, hideActivitiOnFinish: true, withsuccessJSONhandler: { (response) in
 //
 //                if response != nil {
@@ -67,13 +109,13 @@ class MyRoutesVC: BaseVC, UITableViewDataSource, MyRouteTVCellDelegate {
 //                        let searchResultVC = RouteSearchResultsVC(routeInfoModels: routeInfoModels)
 //                        self.navigationController?.pushViewController(searchResultVC, animated: true)
 //                    } else {
-//                        _ = SCLAlertView().showInfo("Info".localized, subTitle: "No routes has been found :(".localized)
+//                        _ = SCLAlertView().showInfo("Info".localized, subTitle: "No routes have been found :(".localized)
 //                    }
 //                }
 //            }, failureHandler: { (error) in
 //
 //            })
-        case .remove():
+        case .remove:
             guard let routeId = route.routeId else { return }
             
             let removeRouteRequest = RemoveRouteRequest(owner: ObjectIdentifier(self))
