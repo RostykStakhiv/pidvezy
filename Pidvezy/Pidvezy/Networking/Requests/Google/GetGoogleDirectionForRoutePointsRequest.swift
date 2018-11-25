@@ -73,13 +73,12 @@ class GetGoogleDirectionForRoutePointsRequest: Request {
                       "destination": destCoordsString,
                       "waypoints": waypointsStr]
         
-        request.httpMethod = "GET"
-        request.url = URL(string: BaseURLs.GoogleDirectionsBaseURL)
-        do {
-            let postData = try JSONSerialization.data(withJSONObject: params, options: [])
-            request.httpBody = postData
-        } catch {
+        guard let requestURL = URLEncoder.buildEncodedURL(withUrlString: BaseURLs.GoogleDirectionsBaseURL, params: params) else {
+            return request
         }
+        
+        request.httpMethod = "GET"
+        request.url = requestURL
         
         return request
     }

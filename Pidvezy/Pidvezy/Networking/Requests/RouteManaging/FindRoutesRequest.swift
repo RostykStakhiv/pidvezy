@@ -25,7 +25,7 @@ class FindRoutesRequest: PaginableRequest {
         }
     }
     
-    var routeModel: RouteInfoModel?
+    var routeModel: Route?
     
     private lazy var actualResponse = FindRoutesResponse()
     override private(set) var response: Response {

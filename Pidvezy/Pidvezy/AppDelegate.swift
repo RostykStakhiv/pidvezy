@@ -4,7 +4,8 @@ import GoogleMaps
 import FBSDKCoreKit
 import FBSDKLoginKit
 import IQKeyboardManagerSwift
-
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         GMSServices.provideAPIKey(GoogleSDKConstants.kGoogleAPIKey)
-        
+        Fabric.with([Crashlytics.self])
         return true
     }
     

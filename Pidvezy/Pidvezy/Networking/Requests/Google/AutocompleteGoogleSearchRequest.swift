@@ -44,7 +44,6 @@ class AutocompleteGoogleSearchRequest: Request {
     
     override func serviceURLRequest() -> URLRequest {
         var request = super.serviceURLRequest()
-        
         guard let userInput = input else {
             return request
         }
@@ -52,13 +51,12 @@ class AutocompleteGoogleSearchRequest: Request {
         let params = ["input": userInput,
                       "key": GoogleSDKConstants.kGoogleAPIKey]
         
-        request.httpMethod = "GET"
-        request.url = URL(string: BaseURLs.GoogleAutocompleteBaseURL)
-        do {
-            let postData = try JSONSerialization.data(withJSONObject: params, options: [])
-            request.httpBody = postData
-        } catch {
+        guard let requestURL = URLEncoder.buildEncodedURL(withUrlString: BaseURLs.GoogleAutocompleteBaseURL, params: params) else {
+            return request
         }
+        
+        request.httpMethod = "GET"
+        request.url = requestURL
         
         return request
     }

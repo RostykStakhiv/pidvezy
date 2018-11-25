@@ -17,6 +17,7 @@ class GooglePlacesManager: NSObject {
     func autocompleteSearchFor(_ querry: String, sucessHandler: @escaping (([GooglePredictionModel]) -> Void), failureHandler: ((Error?) -> Void)?) {
         let googleAutocompleteRequest = AutocompleteGoogleSearchRequest(owner: ObjectIdentifier(self))
         googleAutocompleteRequest.input = querry
+        googleAutocompleteRequest.showActivity = false
         googleAutocompleteRequest.completion = { request, error in
             guard error == nil else {
                 failureHandler?(error)
@@ -50,7 +51,7 @@ class GooglePlacesManager: NSObject {
         let getDirectionsRequest = GetGoogleDirectionForRoutePointsRequest(owner: ObjectIdentifier(self))
         getDirectionsRequest.routePoints = points
         getDirectionsRequest.completion = { request, error in
-            if let response = request as? GetGoogleDirectionForRoutePointsRequest.GetGoogleDirectionForRoutePointsResponse,
+            if let response = request.response as? GetGoogleDirectionForRoutePointsRequest.GetGoogleDirectionForRoutePointsResponse,
                 let polyline = response.polyline {
                 loadedPolyline = polyline
             }

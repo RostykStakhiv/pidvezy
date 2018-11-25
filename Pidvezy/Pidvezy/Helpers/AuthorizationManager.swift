@@ -23,6 +23,8 @@ class AuthorizationManager {
                 SessionStorage.shared.removeSession()
                 return
             }
+            
+            SessionStorage.shared.save(session: session!)
         }
     }
     
@@ -58,11 +60,21 @@ class AuthorizationManager {
                 return
             }
             
-            let loginRequest = LoginWithFacebookRequest(owner: ObjectIdentifier(self))
-            loginRequest.fbToken = token
-            loginRequest.completion = { request, error in
-                
-            }
+            let session = Session(accessToken: "ekgdckjdshdjkvhffkjvh", refreshToken: "rjrehfdkjvkjdhckjhcx")
+            self.session = session
+            completion(nil)
+//            let loginRequest = LoginWithFacebookRequest(owner: ObjectIdentifier(self))
+//            loginRequest.fbToken = token
+//            loginRequest.completion = { request, error in
+//                if let resposne = request.response as? LoginWithFacebookRequest.LoginWithFacebookResponse,
+//                    let session = resposne.session {
+//                    self.session = session
+//                }
+//
+//                completion(error)
+//            }
+//
+//            Dispatcher.shared.processRequest(request: loginRequest)
         }
     }
     

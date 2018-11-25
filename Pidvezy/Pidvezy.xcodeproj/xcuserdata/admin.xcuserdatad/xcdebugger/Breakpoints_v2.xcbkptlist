@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pidvezy/Representation/Flows/Authorization/LoginVC.swift"
-            timestampString = "564767810.0652061"
+            filePath = "Pidvezy/Representation/View Controllers/MyRoutesVC/MyRoutesVC.swift"
+            timestampString = "564875278.064824"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "fbLoginTapped(_:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "actionBtnTappedWith(action:forRow:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

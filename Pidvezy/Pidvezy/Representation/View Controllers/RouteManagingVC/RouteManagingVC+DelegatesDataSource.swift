@@ -89,12 +89,12 @@ extension RouteManagingVC: UITextFieldDelegate {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"
             self.depatrureTimeTF.textfield.text = dateFormatter.string(from: self.departureTimeDatePicker.date)
-            self.routeInfoModel.departureTime = self.depatrureTimeTF.textfield.text
+            self.route.departureTime = self.depatrureTimeTF.textfield.text
         } else if(textField == self.departureDateTF.textfield) {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd.MM.yyyy"
             textField.text = dateFormatter.string(from: self.departureDatePicker.date)
-            self.routeInfoModel.routeDate = textField.text
+            self.route.routeDate = self.departureDatePicker.date as NSDate
         }
     }
 }
@@ -145,8 +145,8 @@ extension RouteManagingVC: CZPickerViewDelegate, CZPickerViewDataSource {
                 weekDaysArray.append(row + 1) //Add 1 because row indexes start from 0 and on backend weekday starts from 1
             }
             
-            self.routeInfoModel.regularDays = weekDaysArray
-            self.weekDaysView.setActiveDays(days: self.routeInfoModel.regularDays)
+            self.route.regularDays = weekDaysArray
+            self.weekDaysView.setActiveDays(days: self.route.regularDays)
         }
     }
 }
