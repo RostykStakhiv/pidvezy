@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18B75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Route" representedClassName="Route" syncable="YES">
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="polylinePoints" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="regularDays" optional="YES" attributeType="Transformable" customClassName="[Int]" syncable="YES"/>
@@ -25,7 +26,7 @@
         <relationship name="routes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Route" inverseName="creator" inverseEntity="Route" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Route" positionX="117" positionY="252" width="128" height="195"/>
+        <element name="Route" positionX="117" positionY="252" width="128" height="210"/>
         <element name="User" positionX="108" positionY="171" width="128" height="195"/>
     </elements>
 </model>

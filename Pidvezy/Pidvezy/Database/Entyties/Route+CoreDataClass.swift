@@ -79,3 +79,24 @@ public class Route: NSManagedObject, ModelMapper {
     }
 
 }
+
+extension Route {
+    func toSearchJSON() -> [String: Any]? {
+        guard let startCoords = self.routePoints?.first?.location?.coordinate,
+            let endCoords = self.routePoints?.last?.location?.coordinate else { return nil }
+            
+        var params = ["start": "\(startCoords.latitude),\(startCoords.longitude)" as AnyObject,
+                      "finish": "\(endCoords.latitude),\(endCoords.longitude)" as AnyObject,
+                      "page": "1" as AnyObject]
+        
+//            if let departureTime = self.departureTime {
+//                params["time_s"] = departureTime as AnyObject
+//            }
+    
+        if let type = self.type {
+            params["route_type"] = type as AnyObject
+        }
+        
+        return params
+    }
+}

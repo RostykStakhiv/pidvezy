@@ -26,6 +26,7 @@ extension Route {
     @NSManaged public var routePoints: [GoogleAddressModel]?
     @NSManaged public var type: String?
     @NSManaged public var polylinePoints: String?
+    @NSManaged public var departureTime: String?
     @NSManaged public var creator: User?
 
 }

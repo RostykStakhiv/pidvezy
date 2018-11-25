@@ -11,7 +11,7 @@ class DataModel {
     
 
     // MARK: Core Data Stack setup
-    fileprivate lazy var managedObjectContext: NSManagedObjectContext = {
+    private lazy var managedObjectContext: NSManagedObjectContext = {
         var managedObjectContext: NSManagedObjectContext?
         if #available(iOS 10.0, *){
             
@@ -26,13 +26,13 @@ class DataModel {
         return managedObjectContext!
     }()
     
-    fileprivate lazy var managedObjectModel: NSManagedObjectModel = {
+    private lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = Bundle.main.url(forResource: "Pidvezy", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
-    fileprivate lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
@@ -66,7 +66,7 @@ class DataModel {
     
     // iOS-10
     @available(iOS 10.0, *)
-    fileprivate lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -114,7 +114,7 @@ class DataModel {
     }()
     
     // MARK: private
-    fileprivate lazy var applicationDocumentsDirectory: URL = {
+    private lazy var applicationDocumentsDirectory: URL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named in the application's documents Application Support directory.
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
@@ -140,7 +140,7 @@ class DataModel {
     
     
     //MARK: Private Methods
-    fileprivate func recycleUniqueEntity(entity: ModelMapper.Type, id: Any) -> Any? {
+    private func recycleUniqueEntity(entity: ModelMapper.Type, id: Any) -> Any? {
         var fetchRequest: NSFetchRequest<NSFetchRequestResult>?
         
         if let int64Id = id as? Int64,

@@ -35,7 +35,7 @@ class RouteManagingVC: BaseVC {
     @IBOutlet weak var regularitySwitch: UISwitch!
     
     internal var action: RouteAction = .search()
-    var route: Route?
+    var route: Route!
     
     internal var departureTimeDatePicker: UIDatePicker = UIDatePicker()
     internal var departureDatePicker: UIDatePicker = UIDatePicker()
@@ -51,12 +51,6 @@ class RouteManagingVC: BaseVC {
     }
     
     //MARK: Init Methods
-    convenience init(routeInfoModel: RouteInfoModel) {
-        self.init()
-        self.routeInfoModel = routeInfoModel
-        self.action = .edit()
-    }
-    
     override init() {
         self.action = .search()
         super.init()
@@ -96,27 +90,27 @@ class RouteManagingVC: BaseVC {
     }
     
     internal func validateData() -> (Bool, String?) {
-        guard (self.routeInfoModel.type != nil) else {
+        guard (self.route!.type != nil) else {
             return (false, "Please select Driver or Passenger".localized)
         }
         
-        self.routeInfoModel.routePoints = []
+        self.route!.routePoints = []
         for addressModel in self.routesTV.models {
             if addressModel.formattedAddress != nil && addressModel.location != nil {
-                self.routeInfoModel.routePoints.append(addressModel)
+                self.route!.routePoints!.append(addressModel)
             }
         }
         
-        guard self.routeInfoModel.routePoints.count > 1 else {
+        guard self.route!.routePoints!.count > 1 else {
             return (false, "Please select at least two route points".localized)
         }
         
         if self.regularitySwitch.isOn == false {
-            guard self.routeInfoModel.routeDate != nil else {
+            guard self.route!.routeDate != nil else {
                 return (false, "Please select departure date".localized)
             }
         } else {
-//            guard (self.routeInfoModel.regularDays.count > 0 && (self.action == .edit() || self.action == .create())) else {
+//            guard (self.route.regularDays.count > 0 && (self.action == .edit() || self.action == .create())) else {
 //                return (false, "Please select travel days".localized)
 //            }
         }
@@ -126,7 +120,7 @@ class RouteManagingVC: BaseVC {
     
     //MARK: IBActions
     @IBAction func tripRegularitySwitchChanged(_ sender: UISwitch) {
-        self.routeInfoModel.regularity = (sender.isOn) ? "regular" : "once"
+        self.route!.regularity = (sender.isOn) ? "regular" : "once"
         
         if sender.isOn {
             self.weekDaysViewHeight.constant = 120
@@ -146,7 +140,7 @@ class RouteManagingVC: BaseVC {
         let validationResult = self.validateData()
         if validationResult.0 {
             
-            let model = self.routeInfoModel
+            let model = self.route
             
             switch self.action {
             case .search():
@@ -171,8 +165,8 @@ class RouteManagingVC: BaseVC {
 //
 //                    if let successHandler = self.successHandler {
 //
-//                        let routeInfoModel = RouteInfoModel(dictionary: response!)
-//                        successHandler(routeInfoModel)
+//                        let route = route(dictionary: response!)
+//                        successHandler(route)
 //                        _ = self.navigationController?.popViewController(animated: true)
 //                    }
 //
@@ -182,8 +176,8 @@ class RouteManagingVC: BaseVC {
 //                _ = RequestManager.sharedManager.performRequest(RouteManagingRouter(endpoint: .createRouteWithModel(model: model)), showActiviti: true, hideActivitiOnFinish: true, withsuccessJSONhandler: { (response) in
 //                    if self.successHandler != nil {
 //
-//                        let routeInfoModel = RouteInfoModel(dictionary: response!)
-//                        self.successHandler!(routeInfoModel)
+//                        let route = route(dictionary: response!)
+//                        self.successHandler!(route)
 //                        _ = self.navigationController?.popViewController(animated: true)
 //                    }
 //                }, failureHandler: { (error) in
@@ -200,10 +194,10 @@ class RouteManagingVC: BaseVC {
         if sender.isSelected == false {
             sender.isSelected = true
             if sender === self.driverControl {
-                self.routeInfoModel.type = "driver"
+                self.route!.type = "driver"
                 self.passengerControl.isSelected = false
             } else {
-                self.routeInfoModel.type = "passenger"
+                self.route!.type = "passenger"
                 self.driverControl.isSelected = false
             }
         }
