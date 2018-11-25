@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextFieldWithSwitch" customModule="Pidvezy" customModuleProvider="target">
+            <connections>
+                <outlet property="choiceSwitch" destination="BkV-cP-UHD" id="nLt-uu-6r7"/>
+                <outlet property="leftIconIV" destination="eUh-cd-o2M" id="eym-Ie-kWf"/>
+                <outlet property="textfield" destination="O4N-Ak-JBo" id="iNt-cA-Sug"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="TQR-Cf-piQ">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1" image="car_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eUh-cd-o2M" userLabel="leftIcon">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="uOI-8I-ibZ"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horizontal_separator" translatesAutoresizingMaskIntoConstraints="NO" id="BoF-lL-fZq" userLabel="Underline">
+                    <rect key="frame" x="0.0" y="55" width="360" height="1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="250" id="AYX-WO-GrU"/>
+                        <constraint firstAttribute="height" priority="750" constant="1" id="iJD-zP-GiD"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O4N-Ak-JBo">
+                    <rect key="frame" x="56" y="0.0" width="223" height="55"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BkV-cP-UHD">
+                    <rect key="frame" x="295" y="12" width="51" height="31"/>
+                </switch>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="BoF-lL-fZq" secondAttribute="trailing" id="3zs-bg-BDz"/>
+                <constraint firstAttribute="bottom" secondItem="BoF-lL-fZq" secondAttribute="bottom" id="CIy-lC-eSr"/>
+                <constraint firstItem="BoF-lL-fZq" firstAttribute="leading" secondItem="TQR-Cf-piQ" secondAttribute="leading" id="FQg-uI-tm5"/>
+                <constraint firstItem="BkV-cP-UHD" firstAttribute="centerY" secondItem="O4N-Ak-JBo" secondAttribute="centerY" id="KN6-zf-fvu"/>
+                <constraint firstItem="BkV-cP-UHD" firstAttribute="leading" secondItem="O4N-Ak-JBo" secondAttribute="trailing" constant="16" id="Vhd-X1-p7z"/>
+                <constraint firstItem="O4N-Ak-JBo" firstAttribute="top" secondItem="TQR-Cf-piQ" secondAttribute="top" priority="750" id="a16-GH-O7W"/>
+                <constraint firstItem="BoF-lL-fZq" firstAttribute="top" secondItem="eUh-cd-o2M" secondAttribute="bottom" id="hxO-DQ-Syh"/>
+                <constraint firstItem="BoF-lL-fZq" firstAttribute="top" secondItem="O4N-Ak-JBo" secondAttribute="bottom" id="qwe-YM-QfF"/>
+                <constraint firstItem="eUh-cd-o2M" firstAttribute="leading" secondItem="TQR-Cf-piQ" secondAttribute="leading" id="tNP-pf-dOX"/>
+                <constraint firstItem="eUh-cd-o2M" firstAttribute="top" secondItem="TQR-Cf-piQ" secondAttribute="top" id="voM-8L-ih1"/>
+                <constraint firstAttribute="trailing" secondItem="BkV-cP-UHD" secondAttribute="trailing" constant="16" id="zcR-uI-6uf"/>
+                <constraint firstItem="O4N-Ak-JBo" firstAttribute="leading" secondItem="eUh-cd-o2M" secondAttribute="trailing" constant="12" id="zpP-aj-nQR"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="14" y="-33"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="car_icon" width="30" height="30"/>
+        <image name="horizontal_separator" width="2" height="1"/>
+    </resources>
+</document>

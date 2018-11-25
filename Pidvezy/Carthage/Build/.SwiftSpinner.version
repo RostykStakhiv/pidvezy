@@ -1,0 +1,9 @@
+{
+  "commitish" : "86c64cf5a46e2b1c092de0df7395c1a160ed7938",
+  "iOS" : [
+    {
+      "name" : "SwiftSpinner",
+      "hash" : "b01baa5188c4aa3e4d7e403063de1851f6ca59d5662d32ae7564abf58d0d0af3"
+    }
+  ]
+}
