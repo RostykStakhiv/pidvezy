@@ -152,5 +152,5 @@ extension Request {
 }
 
 extension Request {
-    static var baseURL = "https://pidvezy-debug.herokuapp.com/api/"
+    static var baseURL = "https://pidvezy-api-develop.herokuapp.com/api/"
 }

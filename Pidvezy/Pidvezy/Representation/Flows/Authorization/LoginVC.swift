@@ -2,6 +2,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import SCLAlertView
 
 class LoginVC: BaseVC {
     
@@ -28,7 +29,11 @@ class LoginVC: BaseVC {
             guard error == nil else { return }
             
             self.userProvider.getCurrentUser(completion: { (user, error) in
-                guard error == nil, let user = user else { return }
+                guard error == nil, let user = user else {
+                    _ = SCLAlertView().showError("", subTitle: error?.localizedDescription ?? "Something went wrong")
+                    return
+                }
+                
                 UserProvider.saveUserModel(userModel: user)
                 InterfaceManager.sharedManager.loadMainAppFlow(withTransition: true, fromView: self.view)
             })

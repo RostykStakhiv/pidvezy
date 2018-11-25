@@ -32,7 +32,14 @@ public class User: NSManagedObject, ModelMapper {
     }
     
     func parse(node: [String: Any]) {
-        
+        userId = node["id"] as? String ?? ""
+        name = node["name"] as? String
+        userFbId = node["fb_id"] as? String
+        email = node["email"] as? String
+        phone = node["phone"] as? String
+        locale = node["locale"] as? String
+        jobDescription = node["description"] as? String
+        gender = node["gender"] as? String
     }
 
 }

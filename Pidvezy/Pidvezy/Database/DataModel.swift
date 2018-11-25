@@ -29,7 +29,7 @@ class DataModel {
     
     fileprivate lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = Bundle.main.url(forResource: "Coins", withExtension: "momd")!
+        let modelURL = Bundle.main.url(forResource: "Pidvezy", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
@@ -37,7 +37,7 @@ class DataModel {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("Coins.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("Pidvezy.sqlite")
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
             // Configure automatic migration.
@@ -74,9 +74,9 @@ class DataModel {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "Coins")
+        let container = NSPersistentContainer(name: "Pidvezy")
         
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("Coins.sqlite")
+        let url = self.applicationDocumentsDirectory.appendingPathComponent("Pidvezy.sqlite")
         let description = NSPersistentStoreDescription(url: url)
         description.shouldInferMappingModelAutomatically = true
         description.shouldMigrateStoreAutomatically = true
@@ -85,9 +85,9 @@ class DataModel {
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 do {
-                    let url = self.applicationDocumentsDirectory.appendingPathComponent("Coins.sqlite")
+                    let url = self.applicationDocumentsDirectory.appendingPathComponent("Pidvezy.sqlite")
                     try FileManager.default.removeItem(at: url)
-                    let container = NSPersistentContainer(name: "Coins")
+                    let container = NSPersistentContainer(name: "Pidvezy")
                     container.loadPersistentStores(completionHandler: { (storeDescription, error) in
                         if let error = error as NSError? {
                             // Replace this implementation with code to handle the error appropriately.
@@ -209,6 +209,17 @@ extension DataModel {
         }
         
         fetchedUser.parse(node: data)
+        
+        if let routesIds = data["routes"] as? [String] {
+            var routesSet = Set<Route>()
+            for routeId in routesIds {
+                if let fetchedRoute = recycleUniqueEntity(entity: Route.self, id: routeId) as? Route {
+                    routesSet.insert(fetchedRoute)
+                }
+            }
+            
+            fetchedUser.routes = routesSet as NSSet
+        }
         return fetchedUser
     }
     
@@ -219,6 +230,14 @@ extension DataModel {
         }
         
         fetchedRoute.parse(node: data)
+        
+        if let routeAuthorId = data["user_id"],
+            let userData = data["user"] as? Dictionary<String, Any>,
+            let fetchedUser = recycleUniqueEntity(entity: User.self, id: routeAuthorId) as? User {
+            fetchedUser.parse(node: userData)
+            fetchedRoute.creator = fetchedUser
+        }
+        
         return fetchedRoute
     }
     

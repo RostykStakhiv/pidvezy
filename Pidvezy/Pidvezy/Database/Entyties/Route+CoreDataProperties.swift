@@ -2,7 +2,7 @@
 //  Route+CoreDataProperties.swift
 //  Pidvezy
 //
-//  Created by admin on 11/23/18.
+//  Created by admin on 11/25/18.
 //  Copyright © 2018 Pidvezy. All rights reserved.
 //
 //
@@ -23,8 +23,9 @@ extension Route {
     @NSManaged public var regularity: String?
     @NSManaged public var routeDate: NSDate?
     @NSManaged public var routeId: String?
-    @NSManaged public var type: String?
     @NSManaged public var routePoints: [GoogleAddressModel]?
+    @NSManaged public var type: String?
+    @NSManaged public var polylinePoints: String?
     @NSManaged public var creator: User?
 
 }

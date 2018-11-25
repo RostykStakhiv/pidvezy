@@ -49,7 +49,7 @@ class LoginWithFacebookRequest: Request {
         
         let params = ["grant_type": "convert_token",
                       "client_id": fbAppID,
-                      "client_secret": "7baf6407e303f0ed2a4956e98401cb5f",
+                      "client_secret": "d22b57a27519709123cf49d7c58852db",
                       "backend": "facebook",
                       "token": token]
         
