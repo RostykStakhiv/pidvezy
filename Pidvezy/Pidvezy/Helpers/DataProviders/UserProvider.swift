@@ -39,26 +39,24 @@ class UserProvider {
 //
 //        Dispatcher.shared.processRequest(request: getCurrentUserRequest)
         let userJson = ["id": "55dd6be9ece39a6cf774d6df",
-            "name": "Volodymyr Spodaryk",
-            "fb_id": "911580392233202",
-            "email": "volodymyr.spodaryk@gmail.com",
-            "phone": "+380501234567",
-            "locale": "uk_UA",
-            "description": "CTO в Підвезу!",
-            "gender": "male",
-            "registered_on": "2015-08-26T04:34:01",
-            "location": "Київ, місто Київ, Україна",
-            "city_addr": "Київ, місто Київ, Україна",
-            "city_coords": [50.4501, 30.5234],
-            "home_addr": "вул.Мельникова 42, Київ, місто Київ, Україна",
-            "home_coords": [50.12345, 30.12345],
-            "work_addr": "вул. Хрещатик 1, Київ, місто Київ, Україна",
-            "work_coords": [50.98765, 30.98765],
-            "routes": [
-            "5729cbb69e74fd32dc1489d6",
-            "5830b278984c37000aa779e9",
-            "583d75027156f0000be2e40e"]
-        ] as [String : Any]
+                        "name": "Rostyslav Stakhiv",
+                        "fb_id": "911580392233202",
+                        "email": "rost.stakhiv@gmail.com",
+                        "phone": "+380637325386",
+                        "locale": "uk_UA",
+                        "description": "CTO в Підвезу!",
+                        "gender": "male",
+                        "registered_on": "2015-08-26T04:34:01",
+                        "location": "Київ, місто Київ, Україна",
+                        "city_addr": "Київ, місто Київ, Україна",
+                        "city_coords": [50.4501, 30.5234],
+                        "home_addr": "вул.Мельникова 42, Київ, місто Київ, Україна",
+                        "home_coords": [50.12345, 30.12345],
+                        "work_addr": "вул. Хрещатик 1, Київ, місто Київ, Україна",
+                        "work_coords": [50.98765, 30.98765],
+                        "routes": [
+                            "58d7d9329e74fd2620a1a5b8"] as [String]
+            ] as [String: Any]
         
         DispatchQueue.main.async {
             let parsedUser = DataModel.shared.parseUser(data: userJson)

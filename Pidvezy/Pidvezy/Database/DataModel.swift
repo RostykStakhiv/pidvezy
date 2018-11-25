@@ -12,7 +12,6 @@ class DataModel {
 
     // MARK: Core Data Stack setup
     fileprivate lazy var managedObjectContext: NSManagedObjectContext = {
-        
         var managedObjectContext: NSManagedObjectContext?
         if #available(iOS 10.0, *){
             

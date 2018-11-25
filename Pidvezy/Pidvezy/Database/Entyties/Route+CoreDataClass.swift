@@ -65,6 +65,8 @@ public class Route: NSManagedObject, ModelMapper {
             routePoints.append(endPoint)
         }
         
+        self.routePoints = routePoints
+        
         if let creationDateString = node["created_on"] as? String {
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
             

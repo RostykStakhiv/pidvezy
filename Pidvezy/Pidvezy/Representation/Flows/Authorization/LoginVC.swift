@@ -30,7 +30,9 @@ class LoginVC: BaseVC {
             
             self.userProvider.getCurrentUser(completion: { (user, error) in
                 guard error == nil, let user = user else {
-                    _ = SCLAlertView().showError("", subTitle: error?.localizedDescription ?? "Something went wrong")
+                    DispatchQueue.main.async {
+                        _ = SCLAlertView().showError("", subTitle: error?.localizedDescription ?? "Something went wrong")
+                    }
                     return
                 }
                 

@@ -35,7 +35,6 @@ class RouteManagingVC: BaseVC {
     @IBOutlet weak var regularitySwitch: UISwitch!
     
     internal var action: RouteAction = .search()
-    internal var routeInfoModel: RouteInfoModel = RouteInfoModel()
     var route: Route?
     
     internal var departureTimeDatePicker: UIDatePicker = UIDatePicker()
