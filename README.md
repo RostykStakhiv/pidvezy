@@ -1,8 +1,13 @@
 # Pidvezy
 ## GENERAL
----
 ### Project Description
 **Pidvezy** is a mobile application, which allows users without transport join users with transport to reach their destination.
+
+### Links
+- [UML Diagram](https://htmlpreview.github.io/?https://github.com/RostykStakhiv/pidvezy/blob/master/Docs/PidvezyDiagram.html)
+- [SOLID Compliancy](https://github.com/RostykStakhiv/pidvezy/blob/master/Docs/solid-compliant.md)
+- [Architecture](https://github.com/RostykStakhiv/pidvezy/blob/master/Docs/architecture.md)
+
 ### Background
 Cities have problem with transport overload. Reaching any point in the city takes a lot of time, but we use transport inefficiently. City transport in many cities is a non-reliable service, because user cannot track the status of each bus and be sure, that he reaches destination on time.
 ### Purpose
@@ -24,7 +29,6 @@ List the names, titles, and roles of the major participants in the project.  At 
   - Developer – Oleksa Boyko
   - Developer – Yuri Neklesa
 ## FUNCTIONAL REQUIREMENTS
----
 ### Data Requirements
 Our backend is using MongoDB Database.
 
