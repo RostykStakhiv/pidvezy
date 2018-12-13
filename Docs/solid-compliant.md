@@ -1,5 +1,5 @@
 # SOLID compliant
-Since we use Javascript for backend and frontend, we can/will [follow SOLID principles][0].
+Since we use Swift for client app, we can/will [follow SOLID principles][0].
 
 | Principle             | Compliant |
 | --------------------- |:---------:|
