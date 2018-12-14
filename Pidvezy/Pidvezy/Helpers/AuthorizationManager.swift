@@ -79,15 +79,17 @@ class AuthorizationManager {
     }
     
     func logoutUser(completion: @escaping (_ error: Error?) -> Void) {
-        if let token = self.session?.accessToken {
-            let logoutRequest = LogoutRequest(owner: ObjectIdentifier(self))
-            logoutRequest.accessToken = token
-            logoutRequest.completion = { request, error in
-                completion(error)
-            }
-            
-            Dispatcher.shared.processRequest(request: logoutRequest)
-        }
+//        if let token = self.session?.accessToken {
+//            let logoutRequest = LogoutRequest(owner: ObjectIdentifier(self))
+//            logoutRequest.accessToken = token
+//            logoutRequest.completion = { request, error in
+//                completion(error)
+//            }
+//
+//            Dispatcher.shared.processRequest(request: logoutRequest)
+//        }
+        session = nil
+        completion(nil)
     }
     
     func invalidateSession() {

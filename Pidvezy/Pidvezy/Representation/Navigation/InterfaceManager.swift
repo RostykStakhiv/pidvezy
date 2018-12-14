@@ -36,13 +36,15 @@ class InterfaceManager {
         let mainFlowStoryBoard = UIStoryboard(name: kMainFlowStoryboardID, bundle: nil)
         let initialVC = mainFlowStoryBoard.instantiateInitialViewController()
         
-        if initialVC != nil {
-            if withTransition && fromView != nil {
-                UIView.transition(from: fromView!, to: initialVC!.view, duration: kFlipAnimationDuration, options: .transitionFlipFromLeft, completion: { (_) in
+        DispatchQueue.main.async {
+            if initialVC != nil {
+                if withTransition && fromView != nil {
+                    UIView.transition(from: fromView!, to: initialVC!.view, duration: kFlipAnimationDuration, options: .transitionFlipFromLeft, completion: { (_) in
+                        self.window.rootViewController = initialVC
+                    })
+                } else {
                     self.window.rootViewController = initialVC
-                })
-            } else {
-                self.window.rootViewController = initialVC
+                }
             }
         }
     }

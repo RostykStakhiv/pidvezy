@@ -28,7 +28,7 @@ class LoginVC: BaseVC {
         AuthorizationManager.shared.loginUserWithFacebookToken { [unowned self] (error) in
             guard error == nil else { return }
             
-            self.userProvider.getCurrentUser(completion: { (user, error) in
+            self.userProvider.getCurrentUser(completion: { [unowned self] (user, error) in
                 guard error == nil, let user = user else {
                     DispatchQueue.main.async {
                         _ = SCLAlertView().showError("", subTitle: error?.localizedDescription ?? "Something went wrong")
@@ -37,7 +37,7 @@ class LoginVC: BaseVC {
                 }
                 
                 UserProvider.saveUserModel(userModel: user)
-                InterfaceManager.sharedManager.loadMainAppFlow(withTransition: true, fromView: self.view)
+                InterfaceManager.sharedManager.loadMainAppFlow(withTransition: false, fromView: nil)
             })
         }
     }

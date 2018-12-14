@@ -22,8 +22,8 @@ class RouteInfoCell: UITableViewCell {
             
             self.nameLbl.text = route.creator?.name
             self.professionLbl.text = route.creator?.jobDescription
-//            self.startAddressLbl.text = route.routePoints.first?.formattedAddress
-//            self.endAddressLbl.text = route.routePoints.last?.formattedAddress
+            self.startAddressLbl.text = route.routePoints?.first?.formattedAddress
+            self.endAddressLbl.text = route.routePoints?.last?.formattedAddress
             self.typeLbl.text = route.type?.capitalized
 //            self.departureTimeLbl.text = route.departureTime
             self.weekDaysView.setActiveDays(days: route.regularDays)
