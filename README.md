@@ -60,3 +60,6 @@ State the following in this section:
 ### Performance
 Describe the requirements for the following:
   - Response time for queries and updates: 500 ms
+
+### Threat model
+![tm](/Docs/Images/threatmodel.png?raw=true)
