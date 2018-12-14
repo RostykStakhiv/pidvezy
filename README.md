@@ -63,3 +63,6 @@ Describe the requirements for the following:
 
 ### Threat model
 ![tm](/Docs/Images/threatmodel.png?raw=true)
+
+### Resilency model
+![tm](/Docs/Images/resilencyModel.jpg?raw=true)
