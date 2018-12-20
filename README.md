@@ -64,3 +64,4 @@ Describe the requirements for the following:
 
 ### Resilency model
 ![tm](/Docs/Images/resilencyModel.jpg?raw=true)
+![tm](/Docs/Images/RMA.png?raw=true)
