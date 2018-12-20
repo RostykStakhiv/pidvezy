@@ -45,9 +45,7 @@ Application consists from the next flows:
 ### Security
 The application is protected in the next steps: 
   - Using secured protocol
-  - Obfuscated code
   - Encrypted data
-  - Digital Ocean security services
 ### Reliability
 Reliability is the probability that the system will be able to process work correctly and completely without being aborted.
 
